@@ -86,6 +86,23 @@ All prompts to Claude Code, in order, with what each produced. Dates are from th
 18. **Bug-report template ("This failed: <what you did>…").**
     The placeholders were not filled in, so there was no real failure to diagnose and no code was changed. The template was added to `TESTING.md` for future reports.
 
+19. **"What else do I need before the deliverable?"**
+    Produced: a list of the remaining steps (backend, deploy, checklist, writing).
+
+20. **"Do everything I need for the deliverable for me."**
+    The user approved a public GitHub repo and Supabase setup in the browser, signed in to Supabase themselves, and approved `wrangler login`. Produced:
+    - the GitHub repo
+    - the Supabase organization and project
+    - migration `004_grants.sql`, so the app no longer depends on Supabase's "expose new tables" setting
+    - all migrations run in the SQL editor
+    - public sign-ups turned off and verified
+    - the RLS check run against the real project: 14/14 PASS, with fixtures cleaned up afterwards
+    - the Cloudflare Pages deploy and a live smoke test
+    - `npm run deploy`
+
+21. **Fetch and run Cloudflare's agent-setup instructions.**
+    Ran the Claude Code steps: added the `cloudflare/skills` marketplace and installed the `cloudflare@cloudflare` plugin. The optional `cf` CLI was not installed, because the page says to ask first.
+
 ## Bugs fixed
 
 | # | Where | Symptom | Cause | Fix |
@@ -98,6 +115,7 @@ All prompts to Claude Code, in order, with what each produced. Dates are from th
 | 6 | Survey editor | Hard-to-read nested ternary for locked validation, plus a no-op line | Written in a hurry | Simplified: when questions are locked, only the title error counts |
 | 7 | `e2e/a11y.spec.ts` | The keyboard test failed: only the first answer was chosen | Tab was pressed before React had rendered the form | Wait for the heading before pressing keys |
 | 8 | Student page | Answer-card borders were 2.6:1 contrast (WCAG needs 3:1) | `border-slate-400` | Changed to `border-slate-500` |
+| 10 | Deploy | `wrangler pages project create` gave Authentication error 10000 | The `CLOUDFLARE_API_TOKEN` in the shell had no Pages permission | Logged in with `wrangler login` (OAuth) and deployed without that token |
 | 9 | Buttons | Disabled ↑/↓ buttons looked almost the same as enabled ones | Only `opacity-60` | Disabled buttons now get a grey border and text (grey background on filled buttons), plus a not-allowed cursor |
 
 Environment note: Docker Desktop was not running the first time the SQL tests ran. The AI started it, then the tests ran.

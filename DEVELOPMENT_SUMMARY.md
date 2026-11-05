@@ -84,7 +84,13 @@ The app is set up for Cloudflare Pages:
 
 The steps are in `README.md`. The checklist to run afterwards is in `TESTING.md`.
 
-[TODO: describe your actual deployment: the GitHub repo, the Cloudflare project name and URL, the date, and anything that went differently from the README. At the time of writing, the app had not been deployed and the repo had no commits.]
+Actual deployment (2026-11-04):
+- **Code:** public GitHub repo https://github.com/MaybeSword/classroom-survey
+- **Database:** Supabase project `classroom-survey` (us-east-1, Free plan), set up by running the four migration files in the SQL editor. Public sign-ups were turned off, and the anon-key RLS check passed 14/14 against it.
+- **Site:** Cloudflare Pages project `classroom-survey`, live at https://classroom-survey-dte.pages.dev. It was deployed by direct upload with Wrangler (`npm run deploy`), not through the GitHub connection.
+- **One snag:** the first deploy failed with a Cloudflare "Authentication error", because the API token in my shell had no Pages permission. Logging in with `wrangler login` fixed it.
+
+[TODO: add anything you did differently or noticed while deploying.]
 
 ## What I learned
 

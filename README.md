@@ -1,5 +1,7 @@
 # Classroom Survey
 
+**Live:** https://classroom-survey-dte.pages.dev · **Code:** https://github.com/MaybeSword/classroom-survey
+
 A small web app for quick in-class understanding checks. The instructor prepares
 a survey, activates it, and projects a QR code. Students scan it and answer on
 their phones with no login. Results show up as charts and can be exported to CSV.
@@ -102,6 +104,13 @@ change one on Cloudflare, you must redeploy.
 | `npm run rls-check` | Runs the same RLS check against the real project in `.env` (see TESTING.md) |
 
 ## Deploy to Cloudflare Pages
+
+**Current setup (direct upload):** the live site was deployed from this machine with
+`npm run deploy`. That builds with the values in your local `.env` and uploads `dist/`
+using Wrangler (run `wrangler login` once first). Pushing to GitHub does **not**
+redeploy automatically; run `npm run deploy` after changes.
+
+**Alternative (Git-connected, auto-deploys on push):**
 
 1. Push this repository to GitHub.
 2. Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git**,

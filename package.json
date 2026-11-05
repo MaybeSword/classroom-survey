@@ -15,7 +15,8 @@
     "test:e2e": "playwright test",
     "test:db": "./scripts/test-db.sh",
     "rls-check": "node --env-file=.env scripts/rls-check.ts",
-    "rls-check:local": "./scripts/local/rls-check-local.sh"
+    "rls-check:local": "./scripts/local/rls-check-local.sh",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name classroom-survey --branch main"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.119.0",

@@ -235,11 +235,11 @@ Automated items below use a mocked Supabase. Repeat each one against the real pr
 # Phase 15 — Deployment
 
 - [x] Push the project to GitHub. *https://github.com/MaybeSword/classroom-survey (public)*
-- [ ] Create the Cloudflare Pages site.
-- [ ] Connect Cloudflare Pages to the GitHub repository.
-- [ ] Configure production environment variables.
-- [ ] Deploy the application.
-- [x] Configure SPA routing. *`public/_redirects`; deep links tested in E2E against `vite preview`*
+- [x] Create the Cloudflare Pages site. *`classroom-survey` → https://classroom-survey-dte.pages.dev*
+- [ ] Connect Cloudflare Pages to the GitHub repository. *Optional: the site is deployed by direct upload (`npm run deploy`)*
+- [x] Configure production environment variables. *Built into the upload from the local `.env`*
+- [x] Deploy the application. *2026-11-04*
+- [x] Configure SPA routing. *`public/_redirects`; checked live: `/s/zzzzzz` and `/dashboard` load directly*
 - [x] Turn off public sign-ups in Supabase Auth. *Verified: the sign-up API returns `signup_disabled`*
 - [ ] Create the instructor user (Authentication → Users → Add user).
 - [ ] Verify production login.
