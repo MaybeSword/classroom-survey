@@ -34,7 +34,7 @@ src/
   lib/          supabase client, data access (surveys.ts), CSV, validation, errors
   pages/        Home, Login, Dashboard, SurveyEditor, Present, Results, StudentSurvey
 supabase/
-  migrations/   001_schema.sql, 002_functions.sql, 003_editor.sql  (run in order)
+  migrations/   001_schema.sql … 004_grants.sql  (run in order)
   tests/        SQL tests + fixtures for the RLS check
 scripts/        test-db.sh, rls-check.ts, local/ (Docker helpers)
 e2e/            Playwright tests (Supabase is mocked)
@@ -63,6 +63,7 @@ Without `.env`, the app still runs and shows a "Supabase is not configured" bann
    1. `supabase/migrations/001_schema.sql`: tables, indexes, triggers, RLS policies
    2. `supabase/migrations/002_functions.sql`: activate/close/submit/results RPCs
    3. `supabase/migrations/003_editor.sql`: save/duplicate RPCs, status and edit locks
+   4. `supabase/migrations/004_grants.sql`: explicit table privileges
 
    If you use the Supabase CLI instead, `supabase link` and then `supabase db push` apply the same files.
 
