@@ -11,7 +11,7 @@ This roadmap breaks the implementation into small, testable phases ordered from 
 - *E2E*: `npm run test:e2e`, Playwright in Chromium and mobile WebKit against a **mocked** Supabase.
 - *Unit*: `npm test`.
 
-Nothing has been run against a real Supabase project or a deployed site yet. Those items are left unchecked.
+The real Supabase project has been set up and RLS-checked. The deployed site has not been tested yet, so those items are left unchecked.
 
 ---
 
@@ -33,7 +33,7 @@ Nothing has been run against a real Supabase project or a deployed site yet. Tho
 
 # Phase 2 — Supabase Project and Database
 
-- [ ] Create a Supabase project. *You must do this in the Supabase dashboard. See README.*
+- [x] Create a Supabase project. *`classroom-survey`, us-east-1, Free plan; migrations 001–004 applied 2026-11-04*
 - [x] Create the `surveys` table.
 - [x] Create the `questions` table.
 - [x] Create the `choices` table.
@@ -48,7 +48,7 @@ Nothing has been run against a real Supabase project or a deployed site yet. Tho
 - [x] Verify anonymous students can read active surveys. *RLS check 1a–1c (local only)*
 - [x] Verify anonymous students can submit responses. *RLS check 5 (local only)*
 - [x] Verify authenticated instructors have full access. *SQL tests run as `authenticated` (local only)*
-- [ ] Re-run `npm run rls-check` against the real Supabase project.
+- [x] Re-run `npm run rls-check` against the real Supabase project. *14/14 PASS on 2026-11-04; fixtures cleaned up afterwards*
 
 ---
 
@@ -234,13 +234,14 @@ Automated items below use a mocked Supabase. Repeat each one against the real pr
 
 # Phase 15 — Deployment
 
-- [ ] Push the project to GitHub. *Repo is initialised locally, with no commits or remote yet.*
+- [x] Push the project to GitHub. *https://github.com/MaybeSword/classroom-survey (public)*
 - [ ] Create the Cloudflare Pages site.
 - [ ] Connect Cloudflare Pages to the GitHub repository.
 - [ ] Configure production environment variables.
 - [ ] Deploy the application.
 - [x] Configure SPA routing. *`public/_redirects`; deep links tested in E2E against `vite preview`*
-- [ ] Turn off public sign-ups in Supabase Auth and create the instructor user.
+- [x] Turn off public sign-ups in Supabase Auth. *Verified: the sign-up API returns `signup_disabled`*
+- [ ] Create the instructor user (Authentication → Users → Add user).
 - [ ] Verify production login.
 - [ ] Verify QR codes point to the production URL.
 - [ ] Test student submissions in production.

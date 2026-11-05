@@ -37,7 +37,7 @@ It prints PASS or FAIL for each check:
 2. `npm run rls-check`. This reads `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` from `.env`.
 3. In the SQL Editor, run `supabase/tests/rls_cleanup.sql`.
 
-Last local result (2026-11-04): **14/14 PASS**. No policy changes were needed.
+Last results (2026-11-04): **14/14 PASS** locally and **14/14 PASS** against the real Supabase project. No policy changes were needed.
 
 ## Manual checks still open
 
