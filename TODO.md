@@ -116,7 +116,7 @@ The real Supabase project has been set up and RLS-checked. The deployed site has
 - [x] Display a readable fallback URL.
 - [x] Add a Close Survey button.
 - [x] Add a Download QR Code button.
-- [ ] Scan the QR code with a real phone. *Manual*
+- [x] Scan the QR code with a real phone. *Manual*
 
 ---
 
@@ -220,7 +220,7 @@ Automated items below use a mocked Supabase. Repeat each one against the real pr
 - [x] Test survey editing. *E2E + SQL*
 - [x] Test activation. *SQL*
 - [x] Test closing surveys. *SQL*
-- [ ] Test QR-code links. *Manual, with a phone*
+- [x] Test QR-code links. *Manual, with a phone*
 - [x] Test student submissions. *E2E + SQL + RLS check*
 - [x] Test duplicate-submission prevention. *E2E + SQL + RLS check*
 - [x] Test results calculations. *SQL*
@@ -241,11 +241,11 @@ Automated items below use a mocked Supabase. Repeat each one against the real pr
 - [x] Deploy the application. *2026-11-04*
 - [x] Configure SPA routing. *`public/_redirects`; checked live: `/s/zzzzzz` and `/dashboard` load directly*
 - [x] Turn off public sign-ups in Supabase Auth. *Verified: the sign-up API returns `signup_disabled`*
-- [ ] Create the instructor user (Authentication → Users → Add user).
-- [ ] Verify production login.
-- [ ] Verify QR codes point to the production URL.
-- [ ] Test student submissions in production.
-- [ ] Test instructor results in production.
+- [x] Create the instructor user (Authentication → Users → Add user).
+- [x] Verify production login. *Manual, by the instructor*
+- [x] Verify QR codes point to the production URL. *Manual*
+- [x] Test student submissions in production. *Manual, on a phone*
+- [x] Test instructor results in production. *Manual*
 
 ---
 
